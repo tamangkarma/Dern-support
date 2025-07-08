@@ -1,25 +1,67 @@
 // layout/Sidebar.jsx
-import { Nav } from '../Data/data'
-import { NavLink } from 'react-router'
+import { NavLink } from "react-router";
+import { Nav } from "../Data/data";
 
 const Sidebar = () => {
+  // Separate nav items
+  const topItems = Nav.filter(
+    (item) => item.title !== "Profile" && item.title !== "Logout"
+  );
+  const bottomItems = Nav.filter(
+    (item) => item.title === "Profile" || item.title === "Logout"
+  );
+
   return (
-    <div className='h-screen bg-primary text-white w-60 p-4 rounded-lg flex flex-col'>
-      <ul className='flex flex-col gap-4'>
-        {Nav.map((item, index) => {
+    <div className="h-screen bg-primary text-white w-16 md:w-48 p-4 rounded-tr-2xl rounded-br-2xl flex flex-col justify-between z-50">
+      <div className="flex flex-col gap-1 mt-6">
+        {topItems.map((item, index) => {
           const Icon = item.icon;
           return (
-            <li key={index}>
-              <NavLink to={item.url} className='flex items-center gap-2'>
-                {Icon && <Icon className='text-lg' />}
-                <span>{item.title}</span>
-              </NavLink>
-            </li>
+            <NavLink
+              key={index}
+              to={item.url}
+              className={({ isActive, isPending }) =>
+                `flex items-center gap-2 p-3 rounded-2xl transition ${
+                  isPending
+                    ? "opacity-50"
+                    : isActive
+                    ? "bg-purple-900"
+                    : "hover:bg-purple-800"
+                }`
+              }
+            >
+              {Icon && <Icon className="md:text-xl" />}
+              <span className="hidden md:inline">{item.title}</span>
+            </NavLink>
           );
         })}
-      </ul>
+      </div>
+
+      <div className="flex flex-col gap-1 mb-12">
+        {bottomItems.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <NavLink
+              key={index}
+              to={item.url}
+              className={({ isActive, isPending }) =>
+                `flex items-center gap-2 p-3 rounded-2xl transition ${
+                  isPending
+                    ? "opacity-50"
+                    : isActive
+                    ? "bg-purple-900"
+                    : "hover:bg-purple-800"
+                }`
+              }
+            >
+              {Icon && <Icon className="md:text-xl" />}
+              <span className="hidden md:inline">{item.title}</span>
+            </NavLink>
+          );
+        })}
+      </div>
     </div>
   );
-}
+};
 
 export default Sidebar;
