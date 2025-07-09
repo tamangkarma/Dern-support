@@ -1,5 +1,6 @@
 import HomeBox from "../Components/HomeBox";
-import TopItem from "../SalesDashbboard/TopItem";
+import TopItem from "../Components/SalesDashbboard/TopItem";
+import Signup from "./Signup";
 
 const Homepage = () => {
   return (
