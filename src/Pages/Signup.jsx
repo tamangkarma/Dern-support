@@ -42,11 +42,11 @@ const Signup = () => {
 
   return (
     <>
-      <div className="max-w-md w-full mx-auto my-10 border rounded-2xl shadow-2xl p-6 sm:p-8">
+      <div className="max-w-md w-full mx-auto my-4 border rounded-2xl shadow-2xl p-6 md:p-4">
         <ToastContainer />
         <form onSubmit={handleSubmit(sendatatoApi)} className="space-y-6">
-          <h1 className="text-3xl font-bold text-center">Signup</h1>
-          <p className="text-center text-gray-600">It's quick and easy</p>
+          <h1 className="text-3xl text-primary font-bold text-center">Signup</h1>
+          <p className="text-center text-purple-800">It's quick and easy</p>
 
           <div className="space-y-4">
             <InputField
@@ -121,7 +121,7 @@ const Signup = () => {
           </div>
 
           <button
-            className="bg-red-600 text-white w-full py-3 rounded-2xl font-semibold hover:bg-red-700 transition"
+            className="bg-primary text-white w-full py-3 rounded-2xl font-semibold hover:bg-purple-900 transition"
             type="submit"
           >
             Sign Up
@@ -129,7 +129,7 @@ const Signup = () => {
 
           <p className="text-center mt-4 text-gray-700">
             Already have an account?{" "}
-            <button onClick={handleClick} className="text-red-600 hover:underline">
+            <button onClick={handleClick} className="text-primary hover:underline">
               Log In
             </button>
           </p>

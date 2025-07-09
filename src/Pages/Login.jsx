@@ -35,14 +35,11 @@ const Login = () => {
   return (
     <>
       <div className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-gray-800">
-          Welcome to Login Page
-        </h1>
 
         <div className="w-full max-w-md bg-white border rounded-2xl shadow-lg p-6 sm:p-8">
           <ToastContainer />
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
-            <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6">Login</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-center text-primary mb-6">Login</h1>
 
             <div className="mb-4">
               <InputField
@@ -84,14 +81,14 @@ const Login = () => {
 
             <button
               type="submit"
-              className="bg-red-600 hover:bg-red-700 transition-colors text-white p-3 rounded-2xl w-full font-semibold"
+              className="bg-primary hover:bg-purple-900 transition-colors text-white p-3 rounded-2xl w-full font-semibold"
             >
               Login
             </button>
 
             <p className="text-center mt-5 text-gray-700">
               Don't have an account?{' '}
-              <button onClick={handleClick} className="text-red-600 hover:underline font-semibold">
+              <button onClick={handleClick} className="text-purple-600 hover:underline font-semibold">
                 Sign Up
               </button>
             </p>
