@@ -42,9 +42,9 @@ const Signup = () => {
 
   return (
     <>
-      <div className="max-w-md w-full mx-auto my-4 border rounded-2xl shadow-2xl p-6 md:p-4">
+      <div className="max-w-md w-full mx-auto my-20 border rounded-2xl shadow-2xl p-6 md:p-4">
         <ToastContainer />
-        <form onSubmit={handleSubmit(sendatatoApi)} className="space-y-6">
+        <form onSubmit={handleSubmit(sendatatoApi)} className="space-y-6 ">
           <h1 className="text-3xl text-primary font-bold text-center">Signup</h1>
           <p className="text-center text-purple-800">It's quick and easy</p>
 
