@@ -27,7 +27,7 @@ const Homepage = () => {
         <LineGraph />
       </section>
 
-      <section className="my-10 gap-10 flex flex-col md:flex-row justify-center items-center">
+      <section className="my-10 gap-6 flex flex-col md:flex-row justify-center items-center">
         <TopItemCategories />
         <StockNumbers />
         <StoreList />
