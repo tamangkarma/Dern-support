@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 import Google from "../../public/images/Google_Icons-logo.png";
+import { RoleSelection } from "../Components/Role/RoleSelection";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -21,6 +22,8 @@ const Signup = () => {
   const password = watch("password");
 
   const sendatatoApi = async (data) => {
+    console.log("Submitting signup data:", data);
+
     try {
       const response = await axios.post(
         "http://localhost:3000/user/signup",
@@ -119,6 +122,9 @@ const Signup = () => {
               <span className="text-red-500 text-sm">{errors.confirmPassword.message}</span>
             )}
           </div>
+
+        {/* Choose role selection */}
+          <RoleSelection register={register} errors={errors}/>
 
           <button
             className="bg-primary text-white w-full py-3 rounded-2xl font-semibold hover:bg-purple-900 transition"
