@@ -4,6 +4,7 @@ import { TopItemCategories } from "../Components/Categories/TopItemsCategories";
 import { StockNumbers } from "../Components/StockNo/StockNumbers";
 import { StoreList } from "../Components/StoreList/StoreList";
 import { LineGraph } from "../Components/LineGraph";
+import SchedulePage from "./Scheduling";
 
 const Homepage = () => {
   return (
@@ -12,6 +13,7 @@ const Homepage = () => {
         <h1 className="text-3xl font-bold ml-4 text-primary font-arial">
           Recent activity
         </h1>
+        <SchedulePage/>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 p-4 font-poppins mt-4">
         <HomeBox Quantity="740" title="New Items" />
