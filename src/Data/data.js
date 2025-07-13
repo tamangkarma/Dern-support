@@ -1,4 +1,10 @@
-import { RiHome2Line, RiShoppingBagLine, RiGridLine, RiStore2Line, RiSettings3Line } from "react-icons/ri";
+import {
+  RiHome2Line,
+  RiShoppingBagLine,
+  RiCalendarLine,
+  RiFileListLine,
+  RiSettings3Line,
+} from "react-icons/ri";
 import { RxExit } from "react-icons/rx";
 import { CgProfile } from "react-icons/cg";
 
@@ -9,19 +15,19 @@ export const Nav = [
     icon: RiHome2Line,
   },
   {
-    title: "Products",
-    url: "/products",
+    title: "New Request",
+    url: "/newrequest",
     icon: RiShoppingBagLine,
   },
   {
-    title: "Categories",
-    url: "/categories",
-    icon: RiGridLine,
+    title: "Scheduling",
+    url: "/scheduling",
+    icon: RiCalendarLine, 
   },
   {
-    title: "Stores",
-    url: "/stores",
-    icon: RiStore2Line,
+    title: "Quotes",
+    url: "/quotes",
+    icon: RiFileListLine,
   },
   {
     title: "Settings",
