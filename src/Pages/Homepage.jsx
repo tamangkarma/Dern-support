@@ -46,7 +46,7 @@ const Homepage = () => {
       </div>
 
       {/* Graphs */}
-      <section className="my-10 md:flex md:justify-center md:items-center gap-10">
+      <section className="my-10 md:flex md:justify-center md:items-center gap-28">
         <PieChart />
         <LineGraph />
       </section>

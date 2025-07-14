@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 import Google from "../../public/images/Google_Icons-logo.png";
-import { RoleSelection } from "../Components/Role/RoleSelection";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -22,8 +21,6 @@ const Signup = () => {
   const password = watch("password");
 
   const sendatatoApi = async (data) => {
-    console.log("Submitting signup data:", data);
-
     try {
       const response = await axios.post(
         "http://localhost:3000/user/signup",
@@ -37,6 +34,9 @@ const Signup = () => {
       );
 
       toast.success(response.data.message);
+      setTimeout(() => {
+        navigate("/login");
+      }, 1000);
     } catch (error) {
       console.error("Error:", error);
       toast.error("Error creating user");
@@ -48,7 +48,9 @@ const Signup = () => {
       <div className="max-w-md w-full mx-auto my-20 border rounded-2xl shadow-2xl p-6 md:p-4">
         <ToastContainer />
         <form onSubmit={handleSubmit(sendatatoApi)} className="space-y-6 ">
-          <h1 className="text-3xl text-primary font-bold text-center">Signup</h1>
+          <h1 className="text-3xl text-primary font-bold text-center">
+            Signup
+          </h1>
           <p className="text-center text-purple-800">It's quick and easy</p>
 
           <div className="space-y-4">
@@ -61,7 +63,9 @@ const Signup = () => {
               placeholder={"First Name"}
             />
             {errors.firstName && (
-              <span className="text-red-500 text-sm">{errors.firstName.message}</span>
+              <span className="text-red-500 text-sm">
+                {errors.firstName.message}
+              </span>
             )}
 
             <InputField
@@ -73,7 +77,9 @@ const Signup = () => {
               placeholder={"Last Name"}
             />
             {errors.lastName && (
-              <span className="text-red-500 text-sm">{errors.lastName.message}</span>
+              <span className="text-red-500 text-sm">
+                {errors.lastName.message}
+              </span>
             )}
 
             <InputField
@@ -89,7 +95,9 @@ const Signup = () => {
               placeholder={"Email"}
             />
             {errors.email && (
-              <span className="text-red-500 text-sm">{errors.email.message}</span>
+              <span className="text-red-500 text-sm">
+                {errors.email.message}
+              </span>
             )}
 
             <InputField
@@ -105,7 +113,9 @@ const Signup = () => {
               placeholder={"Password"}
             />
             {errors.password && (
-              <span className="text-red-500 text-sm">{errors.password.message}</span>
+              <span className="text-red-500 text-sm">
+                {errors.password.message}
+              </span>
             )}
 
             <InputField
@@ -119,12 +129,11 @@ const Signup = () => {
               placeholder={"Confirm Password"}
             />
             {errors.confirmPassword && (
-              <span className="text-red-500 text-sm">{errors.confirmPassword.message}</span>
+              <span className="text-red-500 text-sm">
+                {errors.confirmPassword.message}
+              </span>
             )}
           </div>
-
-        {/* Choose role selection */}
-          <RoleSelection register={register} errors={errors}/>
 
           <button
             className="bg-primary text-white w-full py-3 rounded-2xl font-semibold hover:bg-purple-900 transition"
@@ -135,7 +144,10 @@ const Signup = () => {
 
           <p className="text-center mt-4 text-gray-700">
             Already have an account?{" "}
-            <button onClick={handleClick} className="text-primary hover:underline">
+            <button
+              onClick={handleClick}
+              className="text-primary hover:underline"
+            >
               Log In
             </button>
           </p>
