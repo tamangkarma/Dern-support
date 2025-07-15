@@ -6,6 +6,10 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const role = localStorage.getItem("user");
+  const userparse  = JSON.parse(role);
+  const roleuser = userparse.Role.roleName;
+
   useEffect(() => {
     const fetchProfile = async () => {
       const token = localStorage.getItem("accessToken");
@@ -80,6 +84,7 @@ const Profile = () => {
               <InfoRow label="First Name" value={user.firstName} />
               <InfoRow label="Last Name" value={user.lastName} />
               <InfoRow label="Email" value={user.email} />
+              <InfoRow label="Role" value={roleuser}/>
             </div>
           </div>
         )

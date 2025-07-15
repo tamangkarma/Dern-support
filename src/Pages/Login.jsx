@@ -18,7 +18,8 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await http.post('/user/login', data)
+      const response = await http.post('/user/login', data);
+      console.log(response)
       toast.success(response.data.message)
       const accessToken = response.data.accessToken
       localStorage.setItem('accessToken', accessToken)

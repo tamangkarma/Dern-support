@@ -1,15 +1,21 @@
 export const pieChartData = {
-  labels: ["Jackets", "Hoodies", "Jeans", "Shoes", "Caps"],
+  labels: [
+    "Screen Repairs",
+    "Battery Replacement",
+    "Software Issues",
+    "Hardware Upgrades",
+    "Diagnostics Only"
+  ],
   datasets: [
     {
-      label: "Sales in Rs",
-      data: [40000, 25000, 15000, 12000, 8000],
+      label: "Number of Jobs",
+      data: [120, 90, 45, 30, 15],
       backgroundColor: [
-        "#3C096C", 
-        "#6f2dbd", 
-        "#b79ced", 
-        "#C77DFF", 
-        "#E0AAFF", 
+        "#3C096C",   // Deep purple
+        "#6f2dbd",   // Purple
+        "#b79ced",   // Light purple
+        "#C77DFF",   // Light violet
+        "#E0AAFF",   // Light lilac
       ],
       borderWidth: 2,
       borderColor: "#fff",

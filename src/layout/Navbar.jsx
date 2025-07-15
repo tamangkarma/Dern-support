@@ -10,8 +10,8 @@ const Navbar = () => {
 
           <div className="flex items-center justify-between md:w-[50%]">
             <div>
-              <h1 className="text-primary font-semibold text-2xl md:text-3xl ">
-                Inventor. io 
+              <h1 className="text-primary font-bold text-xl md:text-3xl ">
+                Dern Support. io
               </h1>
             </div>
 
