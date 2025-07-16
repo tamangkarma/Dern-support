@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import Footer from "../Components/Footer";
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import MainSidebar from "./mainSidebar";
 
 const Mainlayout = () => {
   return (
@@ -12,8 +12,7 @@ const Mainlayout = () => {
       {/* Sidebar and page content below Navbar */}
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar on the left */}
-        <Sidebar />
-
+        <MainSidebar />
         {/* Main content area */}
         <div className="flex flex-col flex-1 overflow-auto">
           <main className="flex-1 p-4">

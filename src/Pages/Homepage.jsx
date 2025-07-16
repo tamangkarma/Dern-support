@@ -8,7 +8,6 @@ const Homepage = () => {
   const roleuser = userparse.Role.roleName;
   return (
     <div>
-      <h1 className="text-3xl text-center font-bold my-4">Welcome {userparse.firstName} {userparse.lastName} </h1>
       {roleuser === "Admin" ? (
         <AdminDashboard/>
       ): (

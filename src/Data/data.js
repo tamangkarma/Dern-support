@@ -20,14 +20,49 @@ export const Nav = [
     icon: RiShoppingBagLine,
   },
   {
+    title: "Quotes",
+    url: "/quotes",
+    icon: RiFileListLine,
+  },
+  {
     title: "Scheduling",
     url: "/scheduling",
     icon: RiCalendarLine, 
   },
   {
+    title: "Settings",
+    url: "/settings",
+    icon: RiSettings3Line,
+  },
+  {
+    title: "Profile",
+    url: "/profile",
+    icon: CgProfile,
+  },
+  {
+    title: "Logout",
+    url: "/logout",
+    icon: RxExit,
+  },
+];
+
+
+
+export const Navbar = [
+  {
+    title: "Home",
+    url: "/",
+    icon: RiHome2Line,
+  },
+  {
     title: "Quotes",
     url: "/quotes",
     icon: RiFileListLine,
+  },
+  {
+    title: "Scheduling",
+    url: "/scheduling",
+    icon: RiCalendarLine, 
   },
   {
     title: "Settings",

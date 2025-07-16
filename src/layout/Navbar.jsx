@@ -14,14 +14,6 @@ const Navbar = () => {
                 Dern Support. io
               </h1>
             </div>
-
-            <div className="md:w-[70%]">
-              <input
-                type="text"
-                placeholder="Search"
-                className="border border-primary/80 rounded-xl px-4 py-1 w-72 hidden md:flex lg:flex focus:outline-none focus:ring-1 focus:ring-primary/50 placeholder:text-primary/80"
-              />
-            </div>
           </div>
 
           {/* nofication bar */}

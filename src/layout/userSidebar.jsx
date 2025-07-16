@@ -1,13 +1,22 @@
 import { NavLink, useNavigate } from "react-router";
 import { Nav } from "../Data/data";
 
-const Sidebar = () => {
+const UserSidebar = () => {
   const navigate = useNavigate();
 
-  // Separate nav items
-  const topItems = Nav.filter(
-    (item) => item.title !== "Profile" && item.title !== "Logout"
-  );
+  // ✅ Get user role from localStorage
+  const user = localStorage.getItem("user");
+  const parsedUser = user ? JSON.parse(user) : null;
+  const role = parsedUser?.Role?.roleName;
+
+  // ✅ Filter top items based on role
+  const topItems = Nav.filter((item) => {
+    if (item.title === "Profile" || item.title === "Logout") return false;
+    // Hide "Request" if Admin
+    if (item.title === "Request" && role === "Admin") return false;
+    return true;
+  });
+
   const bottomItems = Nav.filter(
     (item) => item.title === "Profile" || item.title === "Logout"
   );
@@ -16,7 +25,7 @@ const Sidebar = () => {
   const handleLogout = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("user");
-    navigate("/login"); // Redirect after logout
+    navigate("/login");
   };
 
   return (
@@ -49,7 +58,6 @@ const Sidebar = () => {
         {bottomItems.map((item, index) => {
           const Icon = item.icon;
 
-          // Special case for Logout: render a button instead of NavLink
           if (item.title === "Logout") {
             return (
               <button
@@ -63,7 +71,6 @@ const Sidebar = () => {
             );
           }
 
-          // For Profile or other bottom items use NavLink normally
           return (
             <NavLink
               key={index}
@@ -88,4 +95,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default UserSidebar;
